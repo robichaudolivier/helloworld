@@ -9,6 +9,8 @@
         body {
             background-color: burlywood;
         }
+
+        #bob {font-size: 92px; }
         button {
         display: inline-block;
         display: block;
@@ -16,14 +18,16 @@
   border: none;
   background-color: #6329c2;
   color: white;
-  padding: 14px 28px;
-  font-size: 16px;
+  padding: 128px 28px;
+  font-size: 50px;
   cursor: pointer;
   text-align: center;
+  border-radius: 89px;
       }
       button:hover {
   background-color: rgb(223, 15, 15);
-  color: black;
+  color: rgb(31, 74, 214);
+  border-radius: 89px;
 }
     </style>
 </head>
@@ -31,6 +35,8 @@
     <h1></h1>
     <button onclick="augmenter(1)">clique moi</button>
     <div id="bob">0</div>
+    <input type="color" name="" id="couleur">
+
     <script>
 let compteur = 0;
 console.log("compteur",compteur);
@@ -39,13 +45,13 @@ function augmenter(valeur) {
     const lediv = document.getElementById ("bob");
     const body = document.getElementById ("body");
     lediv.innerHTML=compteur;
-    lediv.style.fontSize = (compteur + 10) + "px";
-    body.style.backgroundColor=["blue", "pink", "red", "yellow"][(compteur+1)%4]
+    //lediv.style.fontSize = (compteur + 10) + "px";
+    body.style.backgroundColor=document.getElementById("couleur").value;
 lediv.style.color =["blue", "pink", "red", "yellow"][compteur%4];
     console.log("compteur",compteur);
 }
 
-setInterval(()=>{augmenter(1) }, 500)
+//setInterval(()=>{augmenter(1) }, 1000)
     </script>
 </body>
 </html>
