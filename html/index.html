@@ -5,25 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: burlywood;
+        }
+        button {
+        display: inline-block;
+        display: block;
+  width: 100%;
+  border: none;
+  background-color: #6329c2;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+      }
+      button:hover {
+  background-color: rgb(223, 15, 15);
+  color: black;
+}
+    </style>
 </head>
-<body>
-    <h1>allo</h1>
- 
+<body  id="body">
+    <h1></h1>
     <button onclick="augmenter(1)">clique moi</button>
-    <div id="bob">ddfff</div>
+    <div id="bob">0</div>
     <script>
 let compteur = 0;
 console.log("compteur",compteur);
 function augmenter(valeur) {
     compteur = compteur + valeur;
     const lediv = document.getElementById ("bob");
+    const body = document.getElementById ("body");
     lediv.innerHTML=compteur;
-    lediv.style.fontSize = (compteur + 7) + "px";
+    lediv.style.fontSize = (compteur + 10) + "px";
+    body.style.backgroundColor=["blue", "pink", "red", "yellow"][(compteur+1)%4]
 lediv.style.color =["blue", "pink", "red", "yellow"][compteur%4];
     console.log("compteur",compteur);
 }
 
-setInterval(()=>{augmenter(2) }, 500)
+setInterval(()=>{augmenter(1) }, 500)
     </script>
 </body>
 </html>
