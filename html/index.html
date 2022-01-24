@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>allo</h1>
+ 
+    <button onclick="augmenter(1)">clique moi</button>
+    <div id="bob">ddfff</div>
+    <script>
+let compteur = 0;
+console.log("compteur",compteur);
+function augmenter(valeur) {
+    compteur = compteur + valeur;
+    const lediv = document.getElementById ("bob");
+    lediv.innerHTML=compteur;
+    lediv.style.fontSize = (compteur + 7) + "px";
+lediv.style.color =["blue", "pink", "red", "yellow"][compteur%4];
+    console.log("compteur",compteur);
+}
+
+setInterval(()=>{augmenter(2) }, 500)
+    </script>
+</body>
+</html>
