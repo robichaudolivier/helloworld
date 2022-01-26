@@ -36,23 +36,33 @@
   <body id="body">
     <h1></h1>
     <button onclick="augmenter(1)">clique moi</button>
+    <button onclick="reset()">Reset</button>
     <div id="bob">0</div>
-    <input type="color" name="" id="couleur" />
+    <input type="color" name="" id="couleur" onchange="render()" />
 
     <script>
       let compteur = 0;
       console.log("compteur", compteur);
       function augmenter(valeur) {
         compteur = compteur + valeur;
+
+        render();
+      }
+
+      function reset() {
+        compteur = 0;
+        render();
+      }
+      function render() {
         const lediv = document.getElementById("bob");
-        const body = document.getElementById("body");
         lediv.innerHTML = compteur;
+        const body = document.getElementById("body");
         //lediv.style.fontSize = (compteur + 10) + "px";
         body.style.backgroundColor = document.getElementById("couleur").value;
         lediv.style.color = ["blue", "pink", "red", "yellow"][compteur % 4];
         console.log("compteur", compteur);
       }
-
+      render();
       //setInterval(()=>{augmenter(1) }, 1000)
     </script>
   </body>
