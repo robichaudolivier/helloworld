@@ -36,6 +36,7 @@
   <body id="body">
     <h1></h1>
     <button onclick="augmenter(1)">clique moi</button>
+    <button onclick="reset()">Reset</button>
     <div id="bob">0</div>
     <input type="color" name="" id="couleur" />
 
@@ -53,6 +54,9 @@
         console.log("compteur", compteur);
       }
 
+      function reset() {
+        compteur = 0;
+      }
       //setInterval(()=>{augmenter(1) }, 1000)
     </script>
   </body>
