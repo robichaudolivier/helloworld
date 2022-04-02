@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: burlywood;
+      }
+
+      #bob {
+        font-size: 92px;
+      }
+      button {
+        display: inline-block;
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: #6329c2;
+        color: white;
+        padding: 64px 14px;
+        font-size: 50px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 89px;
+      }
+      block {
+        display: inline-block;
+        display: block;
+        width:  19%;
+        border: none;
+        background-color: #2afc00;
+        color: rgb(0, 0, 0);
+        padding: 64px 14px;
+        font-size: 50px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 89px;
+        user-select: none;       
+      }
+      button:hover {
+        background-color: rgb(223, 15, 15);
+        color: rgb(31, 74, 214);
+        border-radius: 89px;
+      }
+      block:hover {
+        background-color: rgb(223, 15, 15);
+        color: rgb(31, 74, 214);
+        border-radius: 89px;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <h1></h1>
+    <button onclick="augmenter(1)">Clique moi</button>
+    <block onclick="reset()">Reset</block>
+    <div id="bob">0</div>
+    <input type="color" name="" id="couleur" onchange="render()" />
+
+    <script>
+      let compteur = 0;
+      console.log("compteur", compteur);
+      function augmenter(valeur) {
+        compteur = compteur + valeur;
+
+        render();
+      }
+
+      function reset() {
+        compteur = 0;
+        render();
+      }
+      function render() {
+        const lediv = document.getElementById("bob");
+        lediv.innerHTML = compteur;
+        const body = document.getElementById("body");
+        //lediv.style.fontSize = (compteur + 10) + "px";
+        body.style.backgroundColor = document.getElementById("couleur").value;
+        lediv.style.color = ["blue", "pink", "red", "yellow"][compteur % 4];
+        console.log("compteur", compteur);
+      }
+      render();
+      //setInterval(()=>{augmenter(1) }, 1000)
+    </script>
+  </body>
+</html>
